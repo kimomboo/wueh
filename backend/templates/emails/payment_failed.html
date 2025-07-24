@@ -1,0 +1,35 @@
+{% extends 'emails/base.html' %}
+
+{% block title %}Payment Failed{% endblock %}
+
+{% block content %}
+<h2>❌ Payment Could Not Be Processed</h2>
+
+<p>Hi {{ user.full_name }},</p>
+
+<p>We were unable to process your payment for the Premium upgrade.</p>
+
+<div class="highlight warning">
+    <h3>⚠️ Payment Details</h3>
+    <p><strong>Amount:</strong> KES {{ notification.payment.amount|floatformat:0 }}</p>
+    <p><strong>Premium Duration:</strong> {{ notification.payment.premium_days }} days</p>
+    <p><strong>Reference:</strong> {{ notification.payment.reference }}</p>
+</div>
+
+<h3>🔧 What you can do:</h3>
+<ul>
+    <li>Check your M-PESA balance and try again</li>
+    <li>Ensure you entered the correct M-PESA PIN</li>
+    <li>Contact your mobile network provider if issues persist</li>
+    <li>Try a different payment method</li>
+</ul>
+
+<div style="text-align: center; margin: 30px 0;">
+    <a href="{{ site_url }}/premium{% if notification.payment.listing %}?listing={{ notification.payment.listing.id }}{% endif %}" class="button">Try Again</a>
+</div>
+
+<p>If you continue experiencing issues, please contact our support team.</p>
+
+<p>Best regards,<br>
+<strong>The PeerStorm Team</strong></p>
+{% endblock %}

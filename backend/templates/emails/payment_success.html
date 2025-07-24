@@ -1,0 +1,46 @@
+{% extends 'emails/base.html' %}
+
+{% block title %}Payment Successful{% endblock %}
+
+{% block content %}
+<h2>🎉 Payment Successful!</h2>
+
+<p>Hi {{ user.full_name }},</p>
+
+<p>Great news! Your payment has been processed successfully.</p>
+
+<div class="highlight success">
+    <h3>✅ Payment Details</h3>
+    <p><strong>Amount:</strong> KES {{ notification.payment.amount|floatformat:0 }}</p>
+    <p><strong>Premium Duration:</strong> {{ notification.payment.premium_days }} days</p>
+    <p><strong>Reference:</strong> {{ notification.payment.reference }}</p>
+    {% if notification.payment.mpesa_receipt_number %}
+    <p><strong>M-PESA Receipt:</strong> {{ notification.payment.mpesa_receipt_number }}</p>
+    {% endif %}
+</div>
+
+{% if notification.payment.listing %}
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin: 20px 0;">
+    <h3>📱 Your Premium Listing</h3>
+    <p><strong>{{ notification.payment.listing.title }}</strong></p>
+    <p>Your listing is now Premium and will be featured prominently for {{ notification.payment.premium_days }} days!</p>
+</div>
+{% endif %}
+
+<h3>🚀 What happens next:</h3>
+<ul>
+    <li>Your listing is now featured in premium sections</li>
+    <li>Priority placement in search results</li>
+    <li>Premium badge for increased credibility</li>
+    <li>No expiration for the premium period</li>
+</ul>
+
+<div style="text-align: center; margin: 30px 0;">
+    <a href="{{ site_url }}/profile" class="button">View My Listings</a>
+</div>
+
+<p>Thank you for choosing PeerStorm Nexus Arena!</p>
+
+<p>Best regards,<br>
+<strong>The PeerStorm Team</strong></p>
+{% endblock %}

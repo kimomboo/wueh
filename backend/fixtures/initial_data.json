@@ -1,0 +1,97 @@
+[
+  {
+    "model": "listings.category",
+    "pk": 1,
+    "fields": {
+      "name": "Electronics & Gadgets",
+      "slug": "electronics-gadgets",
+      "description": "Phones, laptops, cameras, and electronic devices",
+      "icon": "📱",
+      "parent": null,
+      "is_active": true,
+      "sort_order": 1
+    }
+  },
+  {
+    "model": "listings.category",
+    "pk": 2,
+    "fields": {
+      "name": "Vehicles & Transport",
+      "slug": "vehicles-transport",
+      "description": "Cars, motorcycles, trucks, and transport",
+      "icon": "🚗",
+      "parent": null,
+      "is_active": true,
+      "sort_order": 2
+    }
+  },
+  {
+    "model": "listings.category",
+    "pk": 3,
+    "fields": {
+      "name": "Property & Real Estate",
+      "slug": "property-real-estate",
+      "description": "Houses, apartments, land, and commercial property",
+      "icon": "🏠",
+      "parent": null,
+      "is_active": true,
+      "sort_order": 3
+    }
+  },
+  {
+    "model": "listings.category",
+    "pk": 4,
+    "fields": {
+      "name": "Fashion & Beauty",
+      "slug": "fashion-beauty",
+      "description": "Clothing, shoes, accessories, and beauty products",
+      "icon": "👕",
+      "parent": null,
+      "is_active": true,
+      "sort_order": 4
+    }
+  },
+  {
+    "model": "listings.category",
+    "pk": 5,
+    "fields": {
+      "name": "Home & Garden",
+      "slug": "home-garden",
+      "description": "Furniture, appliances, and home improvement",
+      "icon": "🏡",
+      "parent": null,
+      "is_active": true,
+      "sort_order": 5
+    }
+  },
+  {
+    "model": "core.siteconfiguration",
+    "pk": 1,
+    "fields": {
+      "key": "site_name",
+      "value": "PeerStorm Nexus Arena",
+      "description": "Site name",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.siteconfiguration",
+    "pk": 2,
+    "fields": {
+      "key": "site_description",
+      "value": "Kenya's Premier Peer-to-Peer Marketplace",
+      "description": "Site description",
+      "is_active": true
+    }
+  },
+  {
+    "model": "core.siteconfiguration",
+    "pk": 3,
+    "fields": {
+      "key": "maintenance_mode",
+      "value": "false",
+      "description": "Enable maintenance mode",
+      "is_active": true
+    }
+  }
+]

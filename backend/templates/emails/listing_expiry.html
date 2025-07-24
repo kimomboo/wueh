@@ -1,0 +1,40 @@
+{% extends 'emails/base.html' %}
+
+{% block title %}Your Listing is Expiring Soon{% endblock %}
+
+{% block content %}
+<h2>⏰ Your listing is expiring soon!</h2>
+
+<p>Hi {{ user.full_name }},</p>
+
+<p>Your listing "<strong>{{ notification.listing.title }}</strong>" will expire in 24 hours.</p>
+
+<div class="highlight warning">
+    <h3>🚨 Action Required</h3>
+    <p>Free ads expire after 4 days. To keep your listing active and visible to buyers, upgrade to Premium now!</p>
+</div>
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin: 20px 0;">
+    <h3>{{ notification.listing.title }}</h3>
+    <p><strong>Price:</strong> KES {{ notification.listing.price|floatformat:0 }}</p>
+    <p><strong>Location:</strong> {{ notification.listing.location }}</p>
+    <p><strong>Views:</strong> {{ notification.listing.views }}</p>
+</div>
+
+<h3>✨ Premium Benefits:</h3>
+<ul>
+    <li>🎯 Priority placement in search results</li>
+    <li>⏰ No expiration limits</li>
+    <li>👑 Premium badge for credibility</li>
+    <li>📈 Featured in hero banner</li>
+</ul>
+
+<div style="text-align: center; margin: 30px 0;">
+    <a href="{{ site_url }}/premium?listing={{ notification.listing.id }}" class="button">Upgrade to Premium</a>
+</div>
+
+<p>Don't let your listing disappear when buyers are interested!</p>
+
+<p>Best regards,<br>
+<strong>The PeerStorm Team</strong></p>
+{% endblock %}
