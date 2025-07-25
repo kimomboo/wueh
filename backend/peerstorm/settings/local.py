@@ -1,6 +1,7 @@
 """
 Local development settings for PeerStorm Nexus Arena.
 """
+from decouple import config
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -25,9 +26,9 @@ CORS_ALLOW_ALL_ORIGINS = True  # Only for development
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'peerstorm_local',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
+        'NAME': 'peerstorm_db',
+        'USER': 'peeruser',
+        'PASSWORD': 'strongpassword',
         'HOST': 'localhost',
         'PORT': '5432',
     }
